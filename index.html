@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script type="text/javascript" src="dumper.js"></script>
+    <script type="text/javascript">
+      var links = [
+        [ "Michael\nDvorkin", "#" ],
+        [ "email",        "&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6d;&#x69;&#x6b;&#x65;&#x40;&#x64;&#x76;&#x6f;&#x72;&#x6b;&#x69;&#x6e;&#x2e;&#x6e;&#x65;&#x74;" ],
+        [ "fat free crm", "http://www.fatfreecrm.com" ],
+        [ "github",       "http://github.com/michaeldv" ],
+        [ "linkedin",     "http://www.linkedin.com/in/mikedvorkin" ],
+        [ "twitter",      "http://twitter/mid" ]
+      ];
+
+      if (document.addEventListener) {
+        links.sort(function() { return Math.rand(3) - 1 });
+        window.addEventListener("load", function() { new Dumper(links); }, false );
+      } else { // IE
+        links.sort(function() { return Math.rand(3) - 1 });
+        window.attachEvent("onload", function() { new Dumper(links); });
+      }
+    </script>
+    <style>
+      a       { color: gold; text-decoration: none; }
+      body    { background-image: url("subtle_carbon.png"); /* background-color: #0c0c0c;*/ color: darkorange; }
+      li      { margin: 0px; padding: 0px; list-style-type: none; }
+      pre     { margin: 0px; padding: 0px; font-size: 1.1em; }
+      span.c  { color: black; background-color: darkorange; }
+      .center { position: fixed; top: 25%; left: 50%; margin: -50px 0px 0px -288px; }
+    </style>
+    <title>Michael Dvorkin</title>
+  </head>
+
+  <body>
+    <div class="center">
+      <div id="dump"></div>
+      <div id="cursor"></div>
+    </div>
+  </body>
+</html>
+
